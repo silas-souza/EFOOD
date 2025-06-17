@@ -1,17 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { GlobalCss } from './styles'
-import Home from './pages/Home'
-import Perfil from './pages/Perfil'
+import Rotas from './routes'
 
 function App() {
   return (
     <>
-      <GlobalCss />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/perfil/:id" element={<Perfil />} />
-        </Routes>
+        <GlobalCss />
+        <Rotas />
       </BrowserRouter>
     </>
   )
