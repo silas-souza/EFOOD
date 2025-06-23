@@ -1,7 +1,7 @@
 import { ContainerRest, Description, Infos } from './styles'
 import estrelaImg from '../../assets/images/estrela.png'
 import Tag from '../Tag'
-
+import { Link } from 'react-router-dom'
 type Props = {
   title: string
   image: string
@@ -34,7 +34,9 @@ const Restaurant = ({
       </span>
     </div>
     <Description>{description}</Description>
-    <Tag size="small">Saiba mais</Tag>
+    <Link to="/perfil">
+      <Tag size="small">Saiba mais</Tag>
+    </Link>
   </ContainerRest>
 )
 
