@@ -1,66 +1,96 @@
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import List from '../../components/List'
-import type Restaurants from '../../models/Restaurants'
 
 import sushiImg from '../../assets/images/sushi.png'
 import italianaImg from '../../assets/images/italiana.png'
 
+export type Restaurants = {
+  foto: string
+  infos: string[]
+  id: number
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: string
+  descricao: string
+  capa: string
+}
+
 const restaurantDetails: Restaurants[] = [
   {
     id: 1,
-    classification: '4.7',
-    description:
+    avaliacao: '4.7',
+    descricao:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: sushiImg,
+    foto: sushiImg,
+
     infos: ['Destaque da semana', 'Japonesa'],
 
-    title: 'Hioki Sushi'
+    titulo: 'Hioki Sushi',
+    capa: sushiImg,
+    destacado: true, // ✅ added
+    tipo: 'Japonesa' // ✅ added
   },
   {
     id: 2,
-    classification: '5.1',
-    description:
+    avaliacao: '5.1',
+    descricao:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    image: italianaImg,
+    foto: italianaImg,
     infos: ['Italiana'],
-    title: 'La Dolce Vita Trattoria'
+    titulo: 'La Dolce Vita Trattoria',
+    capa: italianaImg,
+    destacado: false, // ✅ added
+    tipo: 'Italiana'
   },
   {
     id: 3,
-    classification: '4.1',
-    description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: sushiImg,
-    infos: ['Destaque da semana', 'Japonesa'],
-    title: 'Hioki Sushi'
+    avaliacao: '5.1',
+    descricao:
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    foto: italianaImg,
+    infos: ['Italiana'],
+    titulo: 'La Dolce Vita Trattoria',
+    capa: italianaImg,
+    destacado: false, // ✅ added
+    tipo: 'Italiana'
   },
   {
     id: 4,
-    classification: '4.9',
-    description:
+    avaliacao: '5.1',
+    descricao:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    image: italianaImg,
+    foto: italianaImg,
     infos: ['Italiana'],
-    title: 'La Dolce Vita Trattoria'
+    titulo: 'La Dolce Vita Trattoria',
+    capa: italianaImg,
+    destacado: false, // ✅ added
+    tipo: 'Italiana'
   },
   {
     id: 5,
-    classification: '4.7',
-    description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: sushiImg,
-    infos: ['Destaque da semana', 'Japonesa'],
-    title: 'Hioki Sushi'
+    avaliacao: '5.1',
+    descricao:
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    foto: italianaImg,
+    infos: ['Italiana'],
+    titulo: 'La Dolce Vita Trattoria',
+    capa: italianaImg,
+    destacado: false, // ✅ added
+    tipo: 'Italiana'
   },
   {
     id: 6,
-    classification: '4.5',
-    description:
+    avaliacao: '4.5',
+    descricao:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    image: italianaImg,
+    foto: italianaImg,
     infos: ['Italiana'],
-    title: 'La Dolce Vita Trattoria'
+    titulo: 'La Dolce Vita Trattoria',
+    capa: italianaImg,
+    destacado: false, // ✅ added
+    tipo: 'Italiana'
   }
 ]
 
