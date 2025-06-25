@@ -1,6 +1,11 @@
-import { ContainerFood, ImagemFood, TitleFood, DescriptionFood } from './styles'
+import {
+  ContainerFood,
+  ImagemFood,
+  TitleFood,
+  DescriptionFood,
+  StyledButton
+} from './styles'
 import Pizzaimg from '../../assets/images/pizza.png'
-import { Botao } from '../Button/styles'
 
 const Food = () => (
   <ContainerFood>
@@ -11,7 +16,7 @@ const Food = () => (
         A clássica Marguerita: molho de tomate suculento, mussarela derretida,
         manjericão fresco e um toque de azeite. Sabor e simplicidade!
       </DescriptionFood>
-      <Botao>Adicionar ao carrinho</Botao>
+      <StyledButton>Adicionar ao carrinho</StyledButton>
     </div>
   </ContainerFood>
 )

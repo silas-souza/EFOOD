@@ -29,3 +29,22 @@ export const DescriptionFood = styled.p`
   line-height: 22px;
   padding-bottom: 8px;
 `
+
+export const StyledButton = styled.button`
+  width: 304px;
+  height: 24px;
+  background-color: ${cores.branco};
+  color: ${cores.rosa};
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+`
