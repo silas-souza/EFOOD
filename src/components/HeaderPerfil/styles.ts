@@ -29,7 +29,6 @@ export const TextBanner = styled.p`
   padding-top: 25px;
   font-size: 32px;
   font-weight: 100;
-  line-height: 100%;
   padding-bottom: 152px;
 `
 

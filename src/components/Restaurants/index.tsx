@@ -2,6 +2,7 @@ import { ContainerRest, Description, Infos, StyledButton } from './styles'
 import estrelaImg from '../../assets/images/estrela.png'
 import Tag from '../Tag'
 import { Link } from 'react-router-dom'
+
 type Props = {
   id: number
   title: string
@@ -10,7 +11,7 @@ type Props = {
   classification: string
   infos: TagInfo[]
 }
-type TagInfo = {
+export type TagInfo = {
   text: string
   size: 'big' | 'small'
 }
@@ -20,7 +21,8 @@ const Restaurant = ({
   image,
   title,
   classification,
-  infos
+  infos,
+  id
 }: Props) => (
   <ContainerRest>
     <img src={image} alt={title} />
@@ -39,7 +41,7 @@ const Restaurant = ({
       </span>
     </div>
     <Description>{description}</Description>
-    <Link to="/perfil">
+    <Link to={`/perfil/${id}`}>
       <StyledButton type="button">Saiba mais</StyledButton>
     </Link>
   </ContainerRest>

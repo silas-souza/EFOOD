@@ -1,12 +1,16 @@
 import fundoImg from '../../assets/images/fundo.png'
 import logo from '../../assets/images/logo.svg'
-import banner from '../../assets/images/fundoperfil.png'
 
 import { Imagem, Text, Banner, TextBanner, RestaurantName } from './styles'
 import { Container } from '../../styles'
 import { Link } from 'react-router-dom'
+type Props = {
+  tipo: string
+  titulo: string
+  capa: string
+}
 
-const HeaderPerfil = () => (
+const HeaderPerfil = ({ capa, tipo, titulo }: Props) => (
   <>
     <Imagem style={{ backgroundImage: `url(${fundoImg})` }}>
       <Text>Restaurantes</Text>
@@ -17,12 +21,12 @@ const HeaderPerfil = () => (
     </Imagem>
     <Banner
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${banner})`
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${capa})`
       }}
     >
       <Container>
-        <TextBanner>Italiana</TextBanner>
-        <RestaurantName>La Dolce Vita Trattoria</RestaurantName>
+        <TextBanner>{tipo}</TextBanner>
+        <RestaurantName>{titulo}</RestaurantName>
       </Container>
     </Banner>
   </>
