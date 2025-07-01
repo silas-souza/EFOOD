@@ -5,25 +5,29 @@ import {
   DescriptionFood,
   StyledButton
 } from './styles'
-import Button from '../ButtonFood'
-import { formataPreco } from '../../utils/formatters'
 
 type FoodProps = {
-  onClick: () => void
   foto: string
   nome: string
   descricao: string
   preco: number
   porcao: string
+  onClick?: () => void
 }
 
-const Food = ({ onClick, foto, descricao, nome, preco }: FoodProps) => {
+export default function Food({
+  onClick,
+  foto,
+  descricao,
+  nome,
+  preco
+}: FoodProps) {
   const limitarDescricao = (descricao: string) => {
     return descricao.length > 150 ? descricao.slice(0, 150) + '...' : descricao
   }
 
   return (
-    <ContainerFood>
+    <ContainerFood onClick={onClick}>
       <ImagemFood src={foto} />
       <div onClick={onClick}>
         <TitleFood>{nome}</TitleFood>
@@ -33,5 +37,3 @@ const Food = ({ onClick, foto, descricao, nome, preco }: FoodProps) => {
     </ContainerFood>
   )
 }
-
-export default Food

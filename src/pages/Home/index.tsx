@@ -9,6 +9,7 @@ export type CardapioItem = {
   preco: number
   porcao: string
   foto: string
+  quantidade: number
 }
 export type Restaurants = {
   foto: string

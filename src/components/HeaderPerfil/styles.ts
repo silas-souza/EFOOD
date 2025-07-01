@@ -37,3 +37,12 @@ export const RestaurantName = styled.p`
   font-weight: 900;
   width: 672px;
 `
+export const Cart = styled.h3`
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 18px;
+  color: ${cores.rosa};
+  &:hover {
+    text-decoration: underline;
+  }
+`

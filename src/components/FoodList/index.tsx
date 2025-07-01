@@ -1,53 +1,69 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { useGetRestauranteQuery } from '../../services/api'
 import type { CardapioItem } from '../../pages/Home'
-import { List } from './styles'
-
-import { Container } from '../../styles'
 import Food from '../Food'
-
+import { List } from './styles'
+import { Container } from '../../styles'
 import {
-  ModalContent,
   Modal,
-  ModalButton,
-  Description,
+  ModalContent,
   BotaoFechar,
   ImageModal,
+  ModalButton,
+  Description,
   Title
 } from './styles'
-
-import Fechar from '../../assets/images/fechar.png'
 import { formataPreco } from '../../utils/formatters'
+import { add, open } from '../../store/reducers/Cart'
+import { Overlay } from '../Cart/styles'
+import Fechar from '../../assets/images/fechar.png'
 
-type Props = {
-  foods: CardapioItem[]
-}
-
-const FoodList = ({ foods }: Props) => {
+export default function FoodList() {
+  const { id } = useParams<{ id: string }>()
+  const [modal, setModal] = useState(false)
   const [pratoSelecionado, setPratoSelecionado] = useState<CardapioItem | null>(
     null
   )
+  const { data } = useGetRestauranteQuery(id!)
+  const dispatch = useDispatch()
+
+  const handleAddToCart = () => {
+    if (pratoSelecionado) {
+      dispatch(add(pratoSelecionado))
+      dispatch(open())
+      setModal(false)
+    }
+  }
+
+  if (!data?.cardapio) return null
 
   return (
     <Container>
       <List>
-        {foods.map((item) => (
+        {data.cardapio.map((item) => (
           <Food
             key={item.id}
-            onClick={() => setPratoSelecionado(item)}
+            onClick={() => {
+              setPratoSelecionado({ ...item, quantidade: 1 })
+              setModal(true)
+            }}
             foto={item.foto}
-            nome={`${item.nome}`}
-            descricao={`${item.descricao}`}
+            nome={item.nome}
+            descricao={item.descricao}
             preco={item.preco}
-            porcao={`${item.porcao}`}
+            porcao={item.porcao}
           />
         ))}
       </List>
 
-      <Modal className={pratoSelecionado ? 'visivel' : ''}>
+      <Modal className={modal ? 'visivel' : ''}>
         {pratoSelecionado && (
           <ModalContent>
             <BotaoFechar
               src={Fechar}
+              alt="Fechar"
               onClick={() => setPratoSelecionado(null)}
             />
             <ImageModal
@@ -60,16 +76,14 @@ const FoodList = ({ foods }: Props) => {
                 {pratoSelecionado.descricao}
                 <span>{pratoSelecionado.porcao}</span>
               </Description>
-              <ModalButton>
+              <ModalButton onClick={handleAddToCart}>
                 Adicionar ao carrinho {formataPreco(pratoSelecionado.preco)}
               </ModalButton>
             </div>
           </ModalContent>
         )}
-        <div className="overlay"></div>
+        <Overlay onClick={() => setModal(false)} />
       </Modal>
     </Container>
   )
 }
-
-export default FoodList
