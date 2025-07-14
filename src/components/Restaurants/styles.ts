@@ -25,12 +25,14 @@ export const ContainerRest = styled.div`
       margin-top: 8px;
       margin-bottom: 16px;
       margin-left: 8px;
+       
     }
 
     span {
       font-weight: bold;
       margin-top: 8px;
       margin-bottomL 16px;
+      color: ${cores.bege};
     }
 
     img {

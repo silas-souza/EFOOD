@@ -8,14 +8,14 @@ export const Imagem = styled.div`
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   justify-items: center;
-  padding: 0 32px;
+  padding: 170 32px;
 `
 
 export const Text = styled.h3`
   font-size: 18px;
   font-weight: 900;
   color: ${cores.rosa};
-  align: center;
+  padding-left: 55px;
 `
 
 export const Banner = styled.div`
@@ -24,7 +24,6 @@ export const Banner = styled.div`
   color: ${cores.branco};
   background-repeat: no-repeat;
   background-size: cover;
-  padding-left: 172px;
 `
 
 export const TextBanner = styled.p`
@@ -32,12 +31,14 @@ export const TextBanner = styled.p`
   font-size: 32px;
   font-weight: 100;
   padding-bottom: 152px;
+  padding-left: 66px;
 `
 
 export const RestaurantName = styled.p`
   font-size: 32px;
   font-weight: 900;
-  width: 672px;
+  width: 676px;
+  padding-left: 66px;
 `
 export const Cart = styled.h3`
   cursor: pointer;

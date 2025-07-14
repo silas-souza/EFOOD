@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const List = styled.ul`
+  width: 320px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 32px;
@@ -9,6 +10,7 @@ export const List = styled.ul`
   padding-top: 56px;
   color: ${cores.bege};
   padding-bottom: 120px;
+  padding-left: 66px;
 `
 export const Modal = styled.div`
   position: fixed;
