@@ -61,7 +61,7 @@ export const StyledButton = styled.button`
   width: 82px;
   height: 24px;
   background-color: ${cores.rosa};
-  color: ${cores.branco};
+  color: ${cores.bege};
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 14px;

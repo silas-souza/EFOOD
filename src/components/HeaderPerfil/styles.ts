@@ -15,6 +15,7 @@ export const Text = styled.h3`
   font-size: 18px;
   font-weight: 900;
   color: ${cores.rosa};
+  align: center;
 `
 
 export const Banner = styled.div`
@@ -23,6 +24,7 @@ export const Banner = styled.div`
   color: ${cores.branco};
   background-repeat: no-repeat;
   background-size: cover;
+  padding-left: 172px;
 `
 
 export const TextBanner = styled.p`

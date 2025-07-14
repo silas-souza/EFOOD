@@ -24,4 +24,5 @@ export const TextHeader = styled.p`
   margin-top: 138px;
   max-width: 550px;
   text-align: center;
+  align-itens: center;
 `
