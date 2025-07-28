@@ -37,7 +37,7 @@ export const DescriptionFood = styled.p`
 export const StyledButton = styled.button`
   width: 304px;
   height: 24px;
-  background-color: ${cores.branco};
+  background-color: ${cores.bege};
   color: ${cores.rosa};
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
